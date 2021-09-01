@@ -6,7 +6,7 @@ Background:
 
 Scenario Outline: Validate the Product List page
     # Navigate to environment URL
-    When the user navigates to {Env_URL}<ProductListPage>
+    When the user navigates to {https://www.tissotwatches.com/}<ProductListPage>
 
     # Products should have the same size in each row
     # Products on each row should be aligned top

@@ -5,7 +5,7 @@ Background:
     Given Setup Country Configuration for FR
 
 Scenario Outline: Validate the Product Detail content page
-    When the user navigates to {Env_URL}<ProductDetailPage>
+    When the user navigates to {https://www.tissotwatches.com/}<ProductDetailPage>
     Then the object ProductDetail.SKU should be visible
     And the object ProductDetail.Name should be visible
     And the object ProductDetail.MainImage should be visible
