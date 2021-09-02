@@ -12,18 +12,6 @@ use Behat\Mink\Session;
 class FeatureContext implements Context
 {
     /**
-     * Initializes context.
-     *
-     * Every scenario gets its own context instance.
-     * You can also pass arbitrary arguments to the
-     * context constructor through behat.yml.
-     */
-    public function __construct()
-    {
-    }
-
-
-    /**
      * @Given shop url
      */
 
@@ -55,6 +43,8 @@ class FeatureContext implements Context
             . $session->getCurrentUrl();
     }
 
+
+
     /**
      * @Given Setup Country Configuration for FR
      */
@@ -64,9 +54,9 @@ class FeatureContext implements Context
     }
 
     /**
-     * @When the user navigates to {https:\/\/www.tissotwatches.com\/fr-fr\/}
+     * @When the user navigates to {https:\/\/www.tissotwatches.com\/}
      */
-    public function theUserNavigatesToHttpsWwwTissotwatchesComFrFr()
+    public function theUserNavigatesToHttpsWwwTissotwatchesCom()
     {
         throw new PendingException();
     }
@@ -96,17 +86,9 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the return code of URL from attribute href of object Main.SubMenu_Men.Links should be equal to :arg1 (For all links)
+     * @Then the return code of URL from attribute href of object Main.SubMenu_Men.Links should be equal to TWO HUNDRED For all linkS
      */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainSubmenuMenLinksShouldBeEqualToForAllLinks($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @When the user navigates to {Env_URL}
-     */
-    public function theUserNavigatesToEnvUrl()
+    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainSubmenuMenLinksShouldBeEqualToTwoHundredForAllLinks()
     {
         throw new PendingException();
     }
@@ -136,9 +118,9 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the return code of URL from attribute href of object Main.SubMenu_Women.Links should be equal to :arg1 (For all links)
+     * @Then the return code of URL from attribute href of object Main.SubMenu_Women.Links should be equal to TWO HUNDRED For all linkS
      */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainSubmenuWomenLinksShouldBeEqualToForAllLinks($arg1)
+    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainSubmenuWomenLinksShouldBeEqualToTwoHundredForAllLinks()
     {
         throw new PendingException();
     }
@@ -168,9 +150,9 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the return code of URL from attribute href of object Main.SubMenu_Collection.Links should be equal to :arg1 (For all links)
+     * @Then the return code of URL from attribute href of object Main.SubMenu_Collection.Links should be equal to TWO HUNDRED For all linkS
      */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainSubmenuCollectionLinksShouldBeEqualToForAllLinks($arg1)
+    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainSubmenuCollectionLinksShouldBeEqualToTwoHundredForAllLinks()
     {
         throw new PendingException();
     }
@@ -184,9 +166,9 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the return code of URL from attribute href of object Main.Menu_Brand should be equal to :arg1
+     * @Then the return code of URL from attribute href of object Main.Menu_Brand should be equal to TWO HUNDRED
      */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainMenuBrandShouldBeEqualTo($arg1)
+    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainMenuBrandShouldBeEqualToTwoHundred()
     {
         throw new PendingException();
     }
@@ -200,9 +182,9 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the return code of URL from attribute href of object Main.Menu_CustomerService should be equal to :arg1
+     * @Then the return code of URL from attribute href of object Main.Menu_CustomerService should be equal to TWO HUNDRED
      */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainMenuCustomerserviceShouldBeEqualTo($arg1)
+    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainMenuCustomerserviceShouldBeEqualToTwoHundred()
     {
         throw new PendingException();
     }
@@ -232,9 +214,9 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the return code of URL from attribute href of object Main.Popup_CountrySelection.Links should be equal to :arg1 (For all links)
+     * @Then the return code of URL from attribute href of object Main.Popup_CountrySelection.Links should be equal to TWO HUNDRED For all linkS
      */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainPopupCountryselectionLinksShouldBeEqualToForAllLinks($arg1)
+    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainPopupCountryselectionLinksShouldBeEqualToTwoHundredForAllLinks()
     {
         throw new PendingException();
     }
@@ -272,9 +254,9 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the return code of URL from attribute href of object Main.Menu_StoreLocator should be equal to :arg1
+     * @Then the return code of URL from attribute href of object Main.Menu_StoreLocator should be equal to TWO HUNDRED
      */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainMenuStorelocatorShouldBeEqualTo($arg1)
+    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainMenuStorelocatorShouldBeEqualToTwoHundred()
     {
         throw new PendingException();
     }
@@ -288,9 +270,9 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the return code of URL from attribute href of object Main.Menu_RegisterWatch should be equal to :arg1
+     * @Then the return code of URL from attribute href of object Main.Menu_RegisterWatch should be equal to TWO HUNDRED
      */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainMenuRegisterwatchShouldBeEqualTo($arg1)
+    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainMenuRegisterwatchShouldBeEqualToTwoHundred()
     {
         throw new PendingException();
     }
@@ -304,9 +286,9 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the return code of URL from attribute href of object Main.Menu_MyAccount should be equal to :arg1
+     * @Then the return code of URL from attribute href of object Main.Menu_MyAccount should be equal to TWO HUNDRED
      */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainMenuMyaccountShouldBeEqualTo($arg1)
+    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainMenuMyaccountShouldBeEqualToTwoHundred()
     {
         throw new PendingException();
     }
@@ -320,9 +302,9 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the return code of URL from attribute href of object Main.Menu_MyCart should be equal to :arg1
+     * @Then the return code of URL from attribute href of object Main.Menu_MyCart should be equal to TWO HUNDRED
      */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainMenuMycartShouldBeEqualTo($arg1)
+    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainMenuMycartShouldBeEqualToTwoHundred()
     {
         throw new PendingException();
     }
@@ -336,17 +318,17 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the value of attribute href of object Main.TissotLogo should be equal to {Env_URL}
+     * @Then the value of attribute href of object Main.TissotLogo should be equal to {https:\/\/www.tissotwatches.com\/}
      */
-    public function theValueOfAttributeHrefOfObjectMainTissotlogoShouldBeEqualToEnvUrl()
+    public function theValueOfAttributeHrefOfObjectMainTissotlogoShouldBeEqualToHttpsWwwTissotwatchesCom()
     {
         throw new PendingException();
     }
 
     /**
-     * @When the user navigates to {Env_URL}montre-homme.html
+     * @When the user navigates to {https:\/\/www.tissotwatches.com\/}montre-homme.html
      */
-    public function theUserNavigatesToEnvUrlMontreHommeHtml()
+    public function theUserNavigatesToHttpsWwwTissotwatchesComMontreHommeHtml()
     {
         throw new PendingException();
     }
@@ -360,23 +342,23 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the return code of URL from attribute href of object ProductList.Product should be equal to :arg1 (For all products)
+     * @Then the return code of URL from attribute href of object ProductList.Product should be equal to TWO HUNDRED For all productS
      */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectProductlistProductShouldBeEqualToForAllProducts($arg1)
+    public function theReturnCodeOfUrlFromAttributeHrefOfObjectProductlistProductShouldBeEqualToTwoHundredForAllProducts()
     {
         throw new PendingException();
     }
 
     /**
-     * @Then the return code of URL from attribute src of object ProductList.Product.Image should be equal to :arg1 (For all images)
+     * @Then the return code of URL from attribute src of object ProductList.Product.Image should be equal to TWO HUNDRED For all imageS
      */
-    public function theReturnCodeOfUrlFromAttributeSrcOfObjectProductlistProductImageShouldBeEqualToForAllImages($arg1)
+    public function theReturnCodeOfUrlFromAttributeSrcOfObjectProductlistProductImageShouldBeEqualToTwoHundredForAllImages()
     {
         throw new PendingException();
     }
 
     /**
-     * @Then the objects [ProductList.Product.Name, ProductList.Product.TechnicalBadge, ProductList.Product.Price] should be aligned: Vertically Centered (For all products)
+     * @Then the objects ProductList.Product.Name, ProductList.Product.TechnicalBadge, ProductList.Product.Price should be aligned: Vertically Centered For all productS
      */
     public function theObjectsProductlistProductNameProductlistProductTechnicalbadgeProductlistProductPriceShouldBeAlignedVerticallyCenteredForAllProducts()
     {
@@ -384,25 +366,25 @@ class FeatureContext implements Context
     }
 
     /**
-     * @When the user navigates to {Env_URL}montre-femme.html
+     * @When the user navigates to {https:\/\/www.tissotwatches.com\/}montre-femme.html
      */
-    public function theUserNavigatesToEnvUrlMontreFemmeHtml()
+    public function theUserNavigatesToHttpsWwwTissotwatchesComMontreFemmeHtml()
     {
         throw new PendingException();
     }
 
     /**
-     * @When the user navigates to {Env_URL}collection.html
+     * @When the user navigates to {https:\/\/www.tissotwatches.com\/}collection.html
      */
-    public function theUserNavigatesToEnvUrlCollectionHtml()
+    public function theUserNavigatesToHttpsWwwTissotwatchesComCollectionHtml()
     {
         throw new PendingException();
     }
 
     /**
-     * @When the user navigates to {Env_URL}catalog\/product\/view\/id\/:arg1\/s\/t1206071104100\/
+     * @When the user navigates to {https:\/\/www.tissotwatches.com\/}catalog\/product\/view\/id\/:arg1\/s\/t1206071104100\/
      */
-    public function theUserNavigatesToEnvUrlCatalogProductViewIdST($arg1)
+    public function theUserNavigatesToHttpsWwwTissotwatchesComCatalogProductViewIdST($arg1)
     {
         throw new PendingException();
     }
@@ -432,9 +414,9 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the return code of URL from attribute src of object ProductDetail.MainImage should be equal to :arg1
+     * @Then the return code of URL from attribute src of object ProductDetail.MainImage should be equal to TWO HUNDRED
      */
-    public function theReturnCodeOfUrlFromAttributeSrcOfObjectProductdetailMainimageShouldBeEqualTo($arg1)
+    public function theReturnCodeOfUrlFromAttributeSrcOfObjectProductdetailMainimageShouldBeEqualToTwoHundred()
     {
         throw new PendingException();
     }
@@ -448,17 +430,17 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the return code of URL from attribute src of object ProductDetail.Images should be equal to :arg1 {{AllObjects}}
+     * @Then the return code of URL from attribute src of object ProductDetail.Images should be equal to TWO HUNDRED {{AllObjects}}
      */
-    public function theReturnCodeOfUrlFromAttributeSrcOfObjectProductdetailImagesShouldBeEqualToAllobjects($arg1)
+    public function theReturnCodeOfUrlFromAttributeSrcOfObjectProductdetailImagesShouldBeEqualToTwoHundredAllobjects()
     {
         throw new PendingException();
     }
 
     /**
-     * @Then the return code of URL from attribute href of object ProductDetail.ImageLinks should be equal to :arg1 {{AllObjects}}
+     * @Then the return code of URL from attribute href of object ProductDetail.ImageLinks should be equal to TWO HUNDRED {{AllObjects}}
      */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectProductdetailImagelinksShouldBeEqualToAllobjects($arg1)
+    public function theReturnCodeOfUrlFromAttributeHrefOfObjectProductdetailImagelinksShouldBeEqualToTwoHundredAllobjects()
     {
         throw new PendingException();
     }
@@ -480,17 +462,17 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the content of object ProductDetail.SelectSize should be not equal to []
+     * @Then the content of object ProductDetail.SelectSize should be not equal to EMPTY ARRAY SIGH
      */
-    public function theContentOfObjectProductdetailSelectsizeShouldBeNotEqualTo()
+    public function theContentOfObjectProductdetailSelectsizeShouldBeNotEqualToEmptyArraySigh()
     {
         throw new PendingException();
     }
 
     /**
-     * @Then the return code of URL from attribute href of object ProductDetail.SelectSize.Documentation should be equal to :arg1
+     * @Then the return code of URL from attribute href of object ProductDetail.SelectSize.Documentation should be equal to TWO HUNDRED
      */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectProductdetailSelectsizeDocumentationShouldBeEqualTo($arg1)
+    public function theReturnCodeOfUrlFromAttributeHrefOfObjectProductdetailSelectsizeDocumentationShouldBeEqualToTwoHundred()
     {
         throw new PendingException();
     }
@@ -512,9 +494,9 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the return code of URL from attribute href of object ProductDetail.ReserveInStore.Help should be equal to :arg1
+     * @Then the return code of URL from attribute href of object ProductDetail.ReserveInStore.Help should be equal to TWO HUNDRED
      */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectProductdetailReserveinstoreHelpShouldBeEqualTo($arg1)
+    public function theReturnCodeOfUrlFromAttributeHrefOfObjectProductdetailReserveinstoreHelpShouldBeEqualToTwoHundred()
     {
         throw new PendingException();
     }
@@ -523,70 +505,6 @@ class FeatureContext implements Context
      * @Then the object ProductDetail.InfoComplementaire should be visible
      */
     public function theObjectProductdetailInfocomplementaireShouldBeVisible()
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @When the user navigates to {https:\/\/www.tissotwatches.com\/en-us\/}
-     */
-    public function theUserNavigatesToHttpsWwwTissotwatchesComEnUs()
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Then the return code of URL from attribute href of object Main.SubMenu_Men.Links should be equal to :arg1 (For all links)
-     */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainSubmenuMenLinksShouldBeEqualToForAllLinks2($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Then the return code of URL from attribute href of object Main.SubMenu_Women.Links should be equal to :arg1 (For all links)
-     */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainSubmenuWomenLinksShouldBeEqualToForAllLinks2($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Then the return code of URL from attribute href of object Main.SubMenu_Collection.Links should be equal to :arg1 (For all links)
-     */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainSubmenuCollectionLinksShouldBeEqualToForAllLinks2($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Then the return code of URL from attribute href of object Main.Popup_CountrySelection.Links should be equal to :arg1 (For all links)
-     */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectMainPopupCountryselectionLinksShouldBeEqualToForAllLinks2($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Then the return code of URL from attribute href of object ProductList.Product should be equal to :arg1 (For all products)
-     */
-    public function theReturnCodeOfUrlFromAttributeHrefOfObjectProductlistProductShouldBeEqualToForAllProducts2($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Then the return code of URL from attribute src of object ProductList.Product.Image should be equal to :arg1 (For all images)
-     */
-    public function theReturnCodeOfUrlFromAttributeSrcOfObjectProductlistProductImageShouldBeEqualToForAllImages2($arg1)
-    {
-        throw new PendingException();
-    }
-
-    /**
-     * @Then the objects [ProductList.Product.Name, ProductList.Product.TechnicalBadge, ProductList.Product.Price] should be aligned: Vertically Centered (For all products)
-     */
-    public function theObjectsProductlistProductNameProductlistProductTechnicalbadgeProductlistProductPriceShouldBeAlignedVerticallyCenteredForAllProducts2()
     {
         throw new PendingException();
     }
