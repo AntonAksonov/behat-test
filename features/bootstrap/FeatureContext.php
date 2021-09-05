@@ -9,40 +9,13 @@ use Behat\Mink\Session;
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext implements Context
+class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext implements Context
 {
+    protected $session;
+
     /**
      * @Given shop url
      */
-
-    public function shopUrl()
-    {
-        $driver = new \Behat\Mink\Driver\GoutteDriver();
-        $session = new \Behat\Mink\Session($driver);
-
-        $session->start();
-        $session->visit('http://sylius.aksonov.pp.ua/en_US/') . "\n";
-        echo "Status code " . $session->getStatusCode() . " ";
-        echo " Current URL: " . $session->getCurrentUrl() . "\n";
-
-
-        $page = $session->getPage();
-        $linkEl = $page->findLink('jeans');
-        $linkEl->click();
-        echo "Page URL после нажатия на продукт: " . $session->getCurrentUrl() . "\n";
-
-
-        $page = $session->getPage();
-        $cart = $page->findButton('Add to cart');
-        $cart->click();
-        echo "Page URL после нажатия на кнопку Add to cart: " . $session->getCurrentUrl() . "\n";
-
-
-        $session->visit('http://sylius.aksonov.pp.ua/en_US/checkout/address');
-        echo "Переход на Checkout/address. Eсли в корзине есть товар то откроется /Checkout/address. Если корзина пуста редирект в /cart. Current URL:"
-            . $session->getCurrentUrl();
-    }
-
 
 
     /**
@@ -50,15 +23,35 @@ class FeatureContext implements Context
      */
     public function setupCountryConfigurationForFr()
     {
-        throw new PendingException();
+        $driver = new \Behat\Mink\Driver\GoutteDriver();
+        $session = new \Behat\Mink\Session($driver);
+        $session->start();
+        $session = $this->getSession();
+        $session->visit($this->locatePath('https://www.tissotwatches.com/fr-fr/'));
+
+        $element = $session->getPage()->find('xpath', '/html/body/div[2]/div[1]/div[2]/header/div[2]/div[3]/div/ul/li[1]');
+        if (null == $element) {
+            echo 'Not found';
+        }
+        else {
+            echo 'Visible';
+        }
+        var_dump($element);
+
     }
 
+
     /**
-     * @When the user navigates to {https:\/\/www.tissotwatches.com\/}
+     * @When the user navigates to {https:\/\/www.tissotwatches.com\/fr-fr\/}
      */
-    public function theUserNavigatesToHttpsWwwTissotwatchesCom()
+    public function theUserNavigatesToHttpsWwwTissotwatchesComFrFr()
     {
-        throw new PendingException();
+        $driver = new \Behat\Mink\Driver\GoutteDriver();
+        $session = new \Behat\Mink\Session($driver);
+        $session->start();
+        $session->visit('https://www.tissotwatches.com/fr-fr/') . "\n";
+        echo $session->getCurrentUrl() . "\n";
+        echo $session->getStatuscode();
     }
 
     /**
@@ -66,15 +59,36 @@ class FeatureContext implements Context
      */
     public function theObjectMainMenuMenShouldBeVisible()
     {
-        throw new PendingException();
+        $driver = new \Behat\Mink\Driver\GoutteDriver();
+        $session = new \Behat\Mink\Session($driver);
+        $session->start();
+        $session = $this->getSession();
+        $session->visit($this->locatePath('https://www.tissotwatches.com/fr-fr/'));
+
+        $element = $session->getPage()->findAll('css', 'Main.Menu_Men');
+
+        if (null == $element) {
+            echo 'Not found';
+        }
+        else {
+            echo 'Visible';
+        }
     }
+
 
     /**
      * @When the user clicks on object Main.Menu_Men
      */
     public function theUserClicksOnObjectMainMenuMen()
     {
-        throw new PendingException();
+        $driver = new \Behat\Mink\Driver\GoutteDriver();
+        $session = new \Behat\Mink\Session($driver);
+        $session->start();
+        $session->visit('https://www.tissotwatches.com/fr-fr/') . "\n";
+        $page = $session->getPage();
+        $menuitem = $page->find('css', 'Main.Menu_Men');
+        $menuitem->click();
+        echo "Page URL после нажатия на Main.Menu_Men " . $session->getCurrentUrl() . "\n";
     }
 
     /**
@@ -318,17 +332,17 @@ class FeatureContext implements Context
     }
 
     /**
-     * @Then the value of attribute href of object Main.TissotLogo should be equal to {https:\/\/www.tissotwatches.com\/}
+     * @Then the value of attribute href of object Main.TissotLogo should be equal to {https:\/\/www.tissotwatches.com\/fr-fr\/}
      */
-    public function theValueOfAttributeHrefOfObjectMainTissotlogoShouldBeEqualToHttpsWwwTissotwatchesCom()
+    public function theValueOfAttributeHrefOfObjectMainTissotlogoShouldBeEqualToHttpsWwwTissotwatchesComFrFr()
     {
         throw new PendingException();
     }
 
     /**
-     * @When the user navigates to {https:\/\/www.tissotwatches.com\/}montre-homme.html
+     * @When the user navigates to {https:\/\/www.tissotwatches.com\/fr-fr\/}montre-homme.html
      */
-    public function theUserNavigatesToHttpsWwwTissotwatchesComMontreHommeHtml()
+    public function theUserNavigatesToHttpsWwwTissotwatchesComFrFrMontreHommeHtml()
     {
         throw new PendingException();
     }
@@ -366,25 +380,25 @@ class FeatureContext implements Context
     }
 
     /**
-     * @When the user navigates to {https:\/\/www.tissotwatches.com\/}montre-femme.html
+     * @When the user navigates to {https:\/\/www.tissotwatches.com\/fr-fr\/}montre-femme.html
      */
-    public function theUserNavigatesToHttpsWwwTissotwatchesComMontreFemmeHtml()
+    public function theUserNavigatesToHttpsWwwTissotwatchesComFrFrMontreFemmeHtml()
     {
         throw new PendingException();
     }
 
     /**
-     * @When the user navigates to {https:\/\/www.tissotwatches.com\/}collection.html
+     * @When the user navigates to {https:\/\/www.tissotwatches.com\/fr-fr\/}collection.html
      */
-    public function theUserNavigatesToHttpsWwwTissotwatchesComCollectionHtml()
+    public function theUserNavigatesToHttpsWwwTissotwatchesComFrFrCollectionHtml()
     {
         throw new PendingException();
     }
 
     /**
-     * @When the user navigates to {https:\/\/www.tissotwatches.com\/}catalog\/product\/view\/id\/:arg1\/s\/t1206071104100\/
+     * @When the user navigates to {https:\/\/www.tissotwatches.com\/fr-fr\/}catalog\/product\/view\/id\/:arg1\/s\/t1206071104100\/
      */
-    public function theUserNavigatesToHttpsWwwTissotwatchesComCatalogProductViewIdST($arg1)
+    public function theUserNavigatesToHttpsWwwTissotwatchesComFrFrCatalogProductViewIdST($arg1)
     {
         throw new PendingException();
     }
@@ -507,5 +521,33 @@ class FeatureContext implements Context
     public function theObjectProductdetailInfocomplementaireShouldBeVisible()
     {
         throw new PendingException();
+    }
+
+    public function shopUrl()
+    {
+        $driver = new \Behat\Mink\Driver\GoutteDriver();
+        $session = new \Behat\Mink\Session($driver);
+
+        $session->start();
+        $session->visit('http://sylius.aksonov.pp.ua/en_US/') . "\n";
+        echo "Status code " . $session->getStatusCode() . " ";
+        echo " Current URL: " . $session->getCurrentUrl() . "\n";
+
+
+        $page = $session->getPage();
+        $linkEl = $page->findLink('jeans');
+        $linkEl->click();
+        echo "Page URL после нажатия на продукт: " . $session->getCurrentUrl() . "\n";
+
+
+        $page = $session->getPage();
+        $cart = $page->findButton('Add to cart');
+        $cart->click();
+        echo "Page URL после нажатия на кнопку Add to cart: " . $session->getCurrentUrl() . "\n";
+
+
+        $session->visit('http://sylius.aksonov.pp.ua/en_US/checkout/address');
+        echo "Переход на Checkout/address. Eсли в корзине есть товар то откроется /Checkout/address. Если корзина пуста редирект в /cart. Current URL:"
+            . $session->getCurrentUrl();
     }
 }

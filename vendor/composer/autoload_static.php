@@ -46,6 +46,7 @@ class ComposerStaticInit8616f01f352e8289c1b535aa02d3468f
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\String\\' => 25,
+            'Symfony\\Component\\OptionsResolver\\' => 34,
             'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\DomCrawler\\' => 29,
@@ -59,8 +60,19 @@ class ComposerStaticInit8616f01f352e8289c1b535aa02d3468f
         array (
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
+            'Psr\\Http\\Client\\' => 16,
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
+        ),
+        'N' => 
+        array (
+            'Nyholm\\Psr7\\' => 12,
+        ),
+        'H' => 
+        array (
+            'Http\\Promise\\' => 13,
+            'Http\\Message\\' => 13,
+            'Http\\Client\\' => 12,
         ),
         'G' => 
         array (
@@ -75,6 +87,7 @@ class ComposerStaticInit8616f01f352e8289c1b535aa02d3468f
         ),
         'B' => 
         array (
+            'Buzz\\' => 5,
             'Behat\\Transliterator\\' => 21,
             'Behat\\Testwork\\' => 15,
             'Behat\\SahiClient\\' => 17,
@@ -149,6 +162,10 @@ class ComposerStaticInit8616f01f352e8289c1b535aa02d3468f
         array (
             0 => __DIR__ . '/..' . '/symfony/string',
         ),
+        'Symfony\\Component\\OptionsResolver\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/options-resolver',
+        ),
         'Symfony\\Component\\Filesystem\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/filesystem',
@@ -183,11 +200,16 @@ class ComposerStaticInit8616f01f352e8289c1b535aa02d3468f
         ),
         'Psr\\Log\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/log/src',
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Psr\\Http\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-client/src',
         ),
         'Psr\\EventDispatcher\\' => 
         array (
@@ -196,6 +218,22 @@ class ComposerStaticInit8616f01f352e8289c1b535aa02d3468f
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Nyholm\\Psr7\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nyholm/psr7/src',
+        ),
+        'Http\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/promise/src',
+        ),
+        'Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/message-factory/src',
+        ),
+        'Http\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/httplug/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -216,6 +254,10 @@ class ComposerStaticInit8616f01f352e8289c1b535aa02d3468f
         'DMore\\ChromeDriver\\' => 
         array (
             0 => __DIR__ . '/..' . '/dmore/chrome-mink-driver/src',
+        ),
+        'Buzz\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kriswallsmith/buzz/lib',
         ),
         'Behat\\Transliterator\\' => 
         array (
@@ -256,10 +298,6 @@ class ComposerStaticInit8616f01f352e8289c1b535aa02d3468f
         ),
         'B' => 
         array (
-            'Buzz' => 
-            array (
-                0 => __DIR__ . '/..' . '/kriswallsmith/buzz/lib',
-            ),
             'Behat\\MinkExtension' => 
             array (
                 0 => __DIR__ . '/..' . '/behat/mink-extension/src',
