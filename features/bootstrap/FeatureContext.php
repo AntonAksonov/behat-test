@@ -12,12 +12,6 @@ use Behat\Mink\Session;
 class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext implements Context
 {
     protected $session;
-
-    /**
-     * @Given shop url
-     */
-
-
     /**
      * @Given Setup Country Configuration for FR
      */
@@ -29,14 +23,13 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         $session = $this->getSession();
         $session->visit($this->locatePath('https://www.tissotwatches.com/fr-fr/'));
 
-        $element = $session->getPage()->find('xpath', '/html/body/div[2]/div[1]/div[2]/header/div[2]/div[3]/div/ul/li[1]');
+        $element = $session->getPage()->findLink('tissot_scopeselector');
         if (null == $element) {
             echo 'Not found';
         }
         else {
             echo 'Visible';
         }
-        var_dump($element);
 
     }
 
@@ -523,6 +516,9 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         throw new PendingException();
     }
 
+    /**
+     * @Given shop url
+     */
     public function shopUrl()
     {
         $driver = new \Behat\Mink\Driver\GoutteDriver();
