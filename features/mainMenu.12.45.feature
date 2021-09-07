@@ -27,7 +27,7 @@ Scenario: Validate the menu "Collections" and the sublinks
     When the user clicks on object Main.Menu_Collection
     Then the object Main.SubMenu_Collection should be visible
     And the return code of URL from attribute href of object Main.SubMenu_Collection.Links should be equal to TWO HUNDRED For all linkS
-#
+
 #Scenario: Validate the menu "Univers Tissot"
 #    When the user navigates to {https://www.tissotwatches.com/fr-fr/}
 #    Then the object Main.Menu_Brand should be visible
