@@ -12,27 +12,21 @@ Scenario: Validate the menu "Homme" and the sublinks
     Then the object Main.SubMenu_Men should be visible
     And the return code of URL from attribute href of object Main.SubMenu_Men.Links should be equal to TWO HUNDRED For all linkS
 
+Scenario: Validate the menu "Femme" and the sublinks
+    When the user navigates to {https://www.tissotwatches.com/fr-fr/}
+    Then the object Main.Menu_Women should be visible
 
+    When the user clicks on object Main.Menu_Women
+    Then the object Main.SubMenu_Women should be visible
+    And the return code of URL from attribute href of object Main.SubMenu_Women.Links should be equal to TWO HUNDRED For all linkS
 
-# какой дравер использовать для isVisible() и Click()
+Scenario: Validate the menu "Collections" and the sublinks
+    When the user navigates to {https://www.tissotwatches.com/fr-fr/}
+    Then the object Main.Menu_Collection should be visible
 
-
-
-#Scenario: Validate the menu "Femme" and the sublinks
-#    When the user navigates to {https://www.tissotwatches.com/fr-fr/}
-#    Then the object Main.Menu_Women should be visible
-#
-#    When the user clicks on object Main.Menu_Women
-#    Then the object Main.SubMenu_Women should be visible
-#    And the return code of URL from attribute href of object Main.SubMenu_Women.Links should be equal to TWO HUNDRED For all linkS
-#
-#Scenario: Validate the menu "Collections" and the sublinks
-#    When the user navigates to {https://www.tissotwatches.com/fr-fr/}
-#    Then the object Main.Menu_Collection should be visible
-#
-#    When the user clicks on object Main.Menu_Collection
-#    Then the object Main.SubMenu_Collection should be visible
-#    And the return code of URL from attribute href of object Main.SubMenu_Collection.Links should be equal to TWO HUNDRED For all linkS
+    When the user clicks on object Main.Menu_Collection
+    Then the object Main.SubMenu_Collection should be visible
+    And the return code of URL from attribute href of object Main.SubMenu_Collection.Links should be equal to TWO HUNDRED For all linkS
 #
 #Scenario: Validate the menu "Univers Tissot"
 #    When the user navigates to {https://www.tissotwatches.com/fr-fr/}

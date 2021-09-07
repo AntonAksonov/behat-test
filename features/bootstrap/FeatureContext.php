@@ -52,36 +52,24 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
      */
     public function theObjectMainMenuMenShouldBeVisible()
     {
-//        $driver = new \Behat\Mink\Driver\GoutteDriver();
-//        $session = new \Behat\Mink\Session($driver);
-//        $session->start();
-//        $session = $this->getSession();
-//        $session->visit($this->locatePath('https://www.tissotwatches.com/fr-fr/'));
-//        $elements = $session->getPage()->findAll('named', array('content', 'HOMME'));
-//        if (count($elements) === 1) {
-//            echo 'Visible';
-//        } else {
-//            echo 'Not found';
-//        }
         $page = $this->getSession()->getPage();
         $elements = $page->findAll('css', '.action-close');
         foreach ($elements as $item) {
             if ($item->isVisible()) {
-                $item->click(); // это закрывает всплывающий попал (если откроешь в инкогнито сайт то там попап который не дает кликать)
+                $item->click();
             }
         }
-
         $this->getSession()->resizeWindow(1800, 1000);
-        $this->getSession()->wait(1000);    // ждем 1сек пока попап закроется
+        $this->getSession()->wait(1000);
 
         $page = $this->getSession()->getPage();
         $element = $page->findAll('named', ['content', 'HOMME']);
 
         if ($element[0]->isVisible()) {
-            echo 'Visible77777777';
+            echo 'Visible';
         }
         else {
-            echo 'Not found666666';
+            echo 'Not found';
         }
     }
 
@@ -95,52 +83,23 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         $elements = $page->findAll('css', '.action-close');
         foreach ($elements as $item) {
             if ($item->isVisible()) {
-                $item->click(); // это закрывает всплывающий попал (если откроешь в инкогнито сайт то там попап который не дает кликать)
+                $item->click();
             }
         }
 
         $this->getSession()->resizeWindow(1800, 1000);
         $this->getSession()->wait(1000);    // ждем 1сек пока попап закроется
 
-        $elements = $page->findAll('named', ['content', 'FEMME']);
+        $elements = $page->findAll('named', ['content', 'HOMME']);
         foreach ($elements as $item) {
-            if($item->getHtml() === 'FEMME') {
+            if($item->getHtml() === 'HOMME') {
                 $item->click();
             }
         }
 
-        $this->getSession()->wait(1000);
-
-        $element = $page->findAll('named', ['content', 'CLASSIC']);
-        if ($element[0]->isVisible()) {
-            echo 'Ура, подменю CLASSIC в женском меню видно';
-        }
-        else {
-            echo 'Not found666666';
-        }
+        echo $this->getSession()->getCurrentUrl();
     }
-//    {
-//        $driver = new \Behat\Mink\Driver\BrowserKitDriver();
-//        $session = new \Behat\Mink\Session($driver);
-//        $session->start();
-//        $session->visit('https://www.tissotwatches.com/fr-fr/') . "\n";
-////      $page = $session->getPage();
-//        $menuitem = $session->getPage()->findAll('named', array('content', 'HOMME'));
-////      $menuitem = $page->find('css', 'Main.Menu_Men');
-//        $menuitem[0]->click();
-//        click($menuitem->link());
-//        echo "Page URL после нажатия на Main.Menu_Men " . $session->getCurrentUrl() . "\n";
-//    }
-//        {
-//            $mink = new Mink(array(
-//                'silex' => new Session(new Behat\Mink\Driver\BrowserKitDriver(new Symfony\Component\HttpKernel\Client())),
-//            ));
-//
-//            $page = $mink->getSession('silex')->getPage();
-//            $page->findLink('Chat')->click();
-//
-////            echo "Page URL после нажатия на Main.Menu_Men " . $session->getCurrentUrl() . "\n";
-//        }
+
 
 
         /**
@@ -149,7 +108,33 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         public
         function theObjectMainSubmenuMenShouldBeVisible()
         {
-            throw new PendingException();
+            $page = $this->getSession()->getPage();
+            $elements = $page->findAll('css', '.action-close');
+            foreach ($elements as $item) {
+                if ($item->isVisible()) {
+                    $item->click();
+                }
+            }
+
+            $this->getSession()->resizeWindow(1800, 1000);
+            $this->getSession()->wait(1000);    // ждем 1сек пока попап закроется
+
+            $elements = $page->findAll('named', ['content', 'HOMME']);
+            foreach ($elements as $item) {
+                if($item->getHtml() === 'HOMME') {
+                    $item->click();
+                }
+            }
+
+            $this->getSession()->wait(1000);
+
+            $element = $page->findAll('named', ['content', 'CLASSIC']);
+            if ($element[0]->isVisible()) {
+                echo ' Подменю CLASSIC в мужском меню видно';
+            }
+            else {
+                echo 'Not found';
+            }
         }
 
         /**
@@ -167,7 +152,25 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         public
         function theObjectMainMenuWomenShouldBeVisible()
         {
-            throw new PendingException();
+            $page = $this->getSession()->getPage();
+            $elements = $page->findAll('css', '.action-close');
+            foreach ($elements as $item) {
+                if ($item->isVisible()) {
+                    $item->click();
+                }
+            }
+            $this->getSession()->resizeWindow(1800, 1000);
+            $this->getSession()->wait(1000);
+
+            $page = $this->getSession()->getPage();
+            $element = $page->findAll('named', ['content', 'FEMME']);
+
+            if ($element[0]->isVisible()) {
+                echo 'Visible';
+            }
+            else {
+                echo 'Not found';
+            }
         }
 
         /**
@@ -176,7 +179,25 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         public
         function theUserClicksOnObjectMainMenuWomen()
         {
-            throw new PendingException();
+            $page = $this->getSession()->getPage();
+            $elements = $page->findAll('css', '.action-close');
+            foreach ($elements as $item) {
+                if ($item->isVisible()) {
+                    $item->click();
+                }
+            }
+
+            $this->getSession()->resizeWindow(1800, 1000);
+            $this->getSession()->wait(1000);    // ждем 1сек пока попап закроется
+
+            $elements = $page->findAll('named', ['content', 'FEMME']);
+            foreach ($elements as $item) {
+                if($item->getHtml() === 'FEMME') {
+                    $item->click();
+                }
+            }
+
+            echo $this->getSession()->getCurrentUrl();
         }
 
         /**
@@ -185,7 +206,33 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         public
         function theObjectMainSubmenuWomenShouldBeVisible()
         {
-            throw new PendingException();
+            $page = $this->getSession()->getPage();
+            $elements = $page->findAll('css', '.action-close');
+            foreach ($elements as $item) {
+                if ($item->isVisible()) {
+                    $item->click();
+                }
+            }
+
+            $this->getSession()->resizeWindow(1800, 1000);
+            $this->getSession()->wait(1000);    // ждем 1сек пока попап закроется
+
+            $elements = $page->findAll('named', ['content', 'FEMME']);
+            foreach ($elements as $item) {
+                if($item->getHtml() === 'FEMME') {
+                    $item->click();
+                }
+            }
+
+            $this->getSession()->wait(1000);
+
+            $element = $page->findAll('named', ['content', 'CLASSIC']);
+            if ($element[0]->isVisible()) {
+                echo ' Подменю CLASSIC в женском меню видно';
+            }
+            else {
+                echo 'Not found';
+            }
         }
 
         /**
@@ -203,7 +250,25 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         public
         function theObjectMainMenuCollectionShouldBeVisible()
         {
-            throw new PendingException();
+            $page = $this->getSession()->getPage();
+            $elements = $page->findAll('css', '.action-close');
+            foreach ($elements as $item) {
+                if ($item->isVisible()) {
+                    $item->click();
+                }
+            }
+            $this->getSession()->resizeWindow(1800, 1000);
+            $this->getSession()->wait(1000);
+
+            $page = $this->getSession()->getPage();
+            $element = $page->findAll('named', ['content', 'COLLECTIONS']);
+
+            if ($element[0]->isVisible()) {
+                echo 'Visible';
+            }
+            else {
+                echo 'Not found';
+            }
         }
 
         /**
@@ -212,7 +277,25 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         public
         function theUserClicksOnObjectMainMenuCollection()
         {
-            throw new PendingException();
+            $page = $this->getSession()->getPage();
+            $elements = $page->findAll('css', '.action-close');
+            foreach ($elements as $item) {
+                if ($item->isVisible()) {
+                    $item->click();
+                }
+            }
+
+            $this->getSession()->resizeWindow(1800, 1000);
+            $this->getSession()->wait(1000);    // ждем 1сек пока попап закроется
+
+            $elements = $page->findAll('named', ['content', 'COLLECTIONS']);
+            foreach ($elements as $item) {
+                if($item->getHtml() === 'COLLECTIONS') {
+                    $item->click();
+                }
+            }
+
+            echo $this->getSession()->getCurrentUrl();
         }
 
         /**
@@ -221,7 +304,33 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         public
         function theObjectMainSubmenuCollectionShouldBeVisible()
         {
-            throw new PendingException();
+            $page = $this->getSession()->getPage();
+            $elements = $page->findAll('css', '.action-close');
+            foreach ($elements as $item) {
+                if ($item->isVisible()) {
+                    $item->click();
+                }
+            }
+
+            $this->getSession()->resizeWindow(1800, 1000);
+            $this->getSession()->wait(1000);    // ждем 1сек пока попап закроется
+
+            $elements = $page->findAll('named', ['content', 'COLLECTIONS']);
+            foreach ($elements as $item) {
+                if($item->getHtml() === 'COLLECTIONS') {
+                    $item->click();
+                }
+            }
+
+            $this->getSession()->wait(1000);
+
+            $element = $page->findAll('named', ['content', 'T-SPORT']);
+            if ($element[0]->isVisible()) {
+                echo ' Подменю T-SPORT в меню COLLECTIONS видно';
+            }
+            else {
+                echo 'Not found';
+            }
         }
 
         /**
