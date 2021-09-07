@@ -3,5 +3,5 @@ default:
   extensions:
     Behat\MinkExtension:
       base_url: https://www.tissotwatches.com/fr-fr/
-      goutte: ~
+      #goutte: ~
       selenium2: ~

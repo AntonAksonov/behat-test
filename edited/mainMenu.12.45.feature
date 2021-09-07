@@ -10,13 +10,7 @@ Scenario: Validate the menu "Homme" and the sublinks
 
     When the user clicks on object Main.Menu_Men
     Then the object Main.SubMenu_Men should be visible
-    And the return code of URL from attribute href of object Main.SubMenu_Men.Links should be equal to TWO HUNDRED For all linkS
-
-
-
-# какой дравер использовать для isVisible() и Click()
-
-
+     And the return code of URL from attribute href of object Main.SubMenu_Men.Links should be equal to TWO HUNDRED For all linkS
 
 #Scenario: Validate the menu "Femme" and the sublinks
 #    When the user navigates to {https://www.tissotwatches.com/fr-fr/}
