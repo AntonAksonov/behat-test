@@ -47,6 +47,7 @@ class ComposerStaticInit8616f01f352e8289c1b535aa02d3468f
             'Symfony\\Component\\Translation\\' => 30,
             'Symfony\\Component\\String\\' => 25,
             'Symfony\\Component\\OptionsResolver\\' => 34,
+            'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\DomCrawler\\' => 29,
@@ -165,6 +166,10 @@ class ComposerStaticInit8616f01f352e8289c1b535aa02d3468f
         'Symfony\\Component\\OptionsResolver\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/options-resolver',
+        ),
+        'Symfony\\Component\\Finder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/finder',
         ),
         'Symfony\\Component\\Filesystem\\' => 
         array (
@@ -298,6 +303,10 @@ class ComposerStaticInit8616f01f352e8289c1b535aa02d3468f
         ),
         'B' => 
         array (
+            'Bex\\Behat\\ScreenshotExtension\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/bex/behat-screenshot/src',
+            ),
             'Behat\\MinkExtension' => 
             array (
                 0 => __DIR__ . '/..' . '/behat/mink-extension/src',
@@ -307,6 +316,10 @@ class ComposerStaticInit8616f01f352e8289c1b535aa02d3468f
                 0 => __DIR__ . '/..' . '/behat/gherkin/src',
             ),
         ),
+    );
+
+    public static $fallbackDirsPsr0 = array (
+        0 => __DIR__ . '/..' . '/bex/behat-extension-driver-locator/src',
     );
 
     public static $classMap = array (
@@ -326,6 +339,7 @@ class ComposerStaticInit8616f01f352e8289c1b535aa02d3468f
             $loader->prefixLengthsPsr4 = ComposerStaticInit8616f01f352e8289c1b535aa02d3468f::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit8616f01f352e8289c1b535aa02d3468f::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit8616f01f352e8289c1b535aa02d3468f::$prefixesPsr0;
+            $loader->fallbackDirsPsr0 = ComposerStaticInit8616f01f352e8289c1b535aa02d3468f::$fallbackDirsPsr0;
             $loader->classMap = ComposerStaticInit8616f01f352e8289c1b535aa02d3468f::$classMap;
 
         }, null, ClassLoader::class);

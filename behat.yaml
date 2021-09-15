@@ -2,6 +2,10 @@ default:
   # ...
   extensions:
     Behat\MinkExtension:
-      base_url: https://www.tissotwatches.com/fr-fr/
-      #goutte: ~
+      base_url: https://www.tissotwatches.com
+#      goutte: ~
       selenium2: ~
+#    Behat\My\\Awesome\\BehatExtension:
+#      active_my_awesome_drivers: first_awesomeness
+#      my_awesome_drivers:
+#        first_awesomeness:

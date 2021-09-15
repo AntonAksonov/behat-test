@@ -1,9 +1,9 @@
-
-Feature: ProductListPage - View Product List
-
-Background:
-    Given Setup Country Configuration for FR
-
+#
+#Feature: ProductListPage - View Product List
+#
+#Background:
+#    Given Setup Country Configuration for FR
+#
 #Scenario Outline: Validate the Product List page
 #    # Navigate to environment URL
 #    When the user navigates to {https://www.tissotwatches.com/fr-fr/}<ProductListPage>
@@ -21,4 +21,3 @@ Background:
 #        | montre-homme.html |
 #        | montre-femme.html |
 #        | collection.html   |
-        

@@ -1,8 +1,8 @@
 
-Feature: ProductDetailPage - View Product Information
-
-Background:
-    Given Setup Country Configuration for FR
+#Feature: ProductDetailPage - View Product Information
+#
+#Background:
+#    Given Setup Country Configuration for FR
 
 #Scenario Outline: Validate the Product Detail content page
 #    When the user navigates to {https://www.tissotwatches.com/fr-fr/}<ProductDetailPage>

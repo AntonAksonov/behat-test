@@ -23,24 +23,30 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         $session = new \Behat\Mink\Session($driver);
         $session->start();
         $session = $this->getSession();
-        $session->visit($this->locatePath('https://www.tissotwatches.com/fr-fr/'));
-
-        $session = $this->getSession()->getPage();
-        $elements = $session->findAll('css', 'store-switcher');
+        $session->visit($this->locatePath('/'));
+        $page = $this->getSession()->getPage();
+        $elements = $page->findAll('css', '.action-close');
         foreach ($elements as $item) {
             if ($item->isVisible()) {
                 $item->click();
             }
         }
-//        $element = $session->findAll('named', ['content', 'France']);
+        $this->getSession()->resizeWindow(1800, 1000);
+        $this->getSession()->wait(1000);
+
+        $this->getSession()->getPage()->find('xpath',"//li/a[@href='#']")->click();
+
+        $this->getSession()->getPage()->find('xpath',"//*//div[2]/div[1]/di")->click();
 //        foreach ($element as $item) {
-//            if ($item->getHtml() === 'France') {
+//            if ($item->isVisible()) {
 //                $item->click();
-//            } else {
-//                echo 'Not found';
 //            }
-            echo $this->getSession()->getCurrentUrl();
 //        }
+
+//        $this->getSession()->getPage()->click("//li/a[@href='#']");
+
+//        $session = $this->getSession()->getPage()->find('css','.store-switcher')->click();
+        echo $this->getSession()->getCurrentUrl();
     }
 
     /**
@@ -149,7 +155,7 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
     public
     function theReturnCodeOfUrlFromAttributeHrefOfObjectMainSubmenuMenLinksShouldBeEqualToTwoHundredForAllLinks()
     {
-        throw new PendingException();
+
     }
 
     /**
@@ -269,6 +275,7 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
 
         if ($element[0]->isVisible()) {
             echo 'Visible';
+
         } else {
             echo 'Not found';
         }
@@ -316,11 +323,11 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         }
 
         $this->getSession()->resizeWindow(1800, 1000);
-        $this->getSession()->wait(1000);    // ждем 1сек пока попап закроется
+        $this->getSession()->wait(1000);
 
-        $elements = $page->findAll('named', ['content', 'COLLECTIONS']);
+        $elements = $page->findAll('named', ['content', 'TOUT VOIR']);
         foreach ($elements as $item) {
-            if ($item->getHtml() === 'COLLECTIONS') {
+            if ($item->getHtml() === 'TOUT VOIR') {
                 $item->click();
             }
         }
@@ -332,6 +339,7 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
             echo ' Подменю T-SPORT в меню COLLECTIONS видно';
         } else {
             echo 'Not found';
+
         }
     }
 
@@ -350,8 +358,28 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
     public
     function theObjectMainMenuBrandShouldBeVisible()
     {
-        throw new PendingException();
+        $page = $this->getSession()->getPage();
+        $elements = $page->findAll('css', '.action-close');
+        foreach ($elements as $item) {
+            if ($item->isVisible()) {
+                $item->click();
+            }
+        }
+
+        $this->getSession()->resizeWindow(1800, 1000);
+        $this->getSession()->wait(1000);
+
+
+        $page = $this->getSession()->getPage();
+        $element = $page->findAll('named', ['content', 'Univers Tissot']);
+
+        if ($element[0]->isVisible()) {
+            echo 'Visible';
+        } else {
+            echo 'Not found';
+        }
     }
+
 
     /**
      * @Then the return code of URL from attribute href of object Main.Menu_Brand should be equal to TWO HUNDRED
@@ -368,7 +396,24 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
     public
     function theObjectMainMenuCustomerserviceShouldBeVisible()
     {
-        throw new PendingException();
+        $page = $this->getSession()->getPage();
+        $elements = $page->findAll('css', '.action-close');
+        foreach ($elements as $item) {
+            if ($item->isVisible()) {
+                $item->click();
+            }
+        }
+        $this->getSession()->resizeWindow(1800, 1000);
+        $this->getSession()->wait(1000);
+
+        $page = $this->getSession()->getPage();
+        $element = $page->findAll('named', ['content', 'Service Client']);
+
+        if ($element[0]->isVisible()) {
+            echo 'Visible';
+        } else {
+            echo 'Not found';
+        }
     }
 
     /**
@@ -386,7 +431,25 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
     public
     function theObjectMainMenuCountryselectionShouldBeVisible()
     {
-        throw new PendingException();
+        $page = $this->getSession()->getPage();
+        $elements = $page->findAll('css', '.action-close');
+        foreach ($elements as $item) {
+            if ($item->isVisible()) {
+                $item->click();
+            }
+        }
+
+        $this->getSession()->resizeWindow(1800, 1000);
+        $this->getSession()->wait(1000);
+
+        $page = $this->getSession()->getPage();
+        $element = $page->findAll('named', ['content', 'MSelection Pays']);
+
+        if ($element[0]->isVisible()) {
+            echo 'Visible';
+        } else {
+            echo 'Not found';
+        }
     }
 
     /**
@@ -395,7 +458,26 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
     public
     function theUserClicksOnObjectMainMenuCountryselection()
     {
-        throw new PendingException();
+
+        $page = $this->getSession()->getPage();
+        $elements = $page->findAll('css', '.action-close');
+        foreach ($elements as $item) {
+            if ($item->isVisible()) {
+                $item->click();
+            }
+        }
+
+        $this->getSession()->resizeWindow(1800, 1000);
+        $this->getSession()->wait(1000);
+
+        $page = $this->getSession()->getPage();
+        $elements = $page->findAll('named', ['content', 'MSelection Pays']);
+        foreach ($elements as $item) {
+            if ($item->getHtml() === 'Main.Menu_CountrySelection') {
+                $item->click();
+            }
+            echo $this->getSession()->getCurrentUrl();
+        }
     }
 
     /**
@@ -404,7 +486,22 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
     public
     function theObjectMainPopupCountryselectionShouldBeVisible()
     {
-        throw new PendingException();
+        $page = $this->getSession()->getPage();
+        $elements = $page->findAll('named', ['content', 'MSelection Pays']);
+        foreach ($elements as $item) {
+            if ($item->getHtml() === 'MSelection Pays') {
+                $item->click();
+            }
+        }
+
+        $elements = $page->findAll('css', '.action-close');
+        foreach ($elements as $item) {
+            if ($item->isVisible()) {
+                echo 'Visible';
+            } else {
+                echo 'Not found';
+            }
+        }
     }
 
     /**
@@ -422,7 +519,26 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
     public
     function theObjectMainMenuSearchShouldBeVisible()
     {
-        throw new PendingException();
+        $page = $this->getSession()->getPage();
+        $elements = $page->findAll('css', '.action-close');
+        foreach ($elements as $item) {
+            if ($item->isVisible()) {
+                $item->click();
+            }
+        }
+
+        $this->getSession()->resizeWindow(1800, 1000);
+        $this->getSession()->wait(1000);
+
+
+        $page = $this->getSession()->getPage();
+        $element = $page->findAll('named', ['content', 'Rechercher']);
+
+        if ($element[0]->isVisible()) {
+            echo 'Visible';
+        } else {
+            echo 'Not found';
+        }
     }
 
     /**
@@ -431,7 +547,25 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
     public
     function theUserClicksOnObjectMainMenuSearch()
     {
-        throw new PendingException();
+        $page = $this->getSession()->getPage();
+        $elements = $page->findAll('css', '.action-close');
+        foreach ($elements as $item) {
+            if ($item->isVisible()) {
+                $item->click();
+            }
+        }
+
+        $this->getSession()->resizeWindow(1800, 1000);
+        $this->getSession()->wait(1000);
+
+        $page = $this->getSession()->getPage();
+        $elements = $page->findAll('named', ['content', 'Rechercher']);
+        foreach ($elements as $item) {
+            if ($item->getHtml() === 'SEARCH') {
+                $item->click();
+            }
+            echo $this->getSession()->getCurrentUrl();
+        }
     }
 
     /**
@@ -440,7 +574,25 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
     public
     function theObjectMainSearchInputShouldBeVisible()
     {
-        throw new PendingException();
+
+        $page = $this->getSession()->getPage();
+        $element = $page->findAll('named', ['content', 'INPUT']);
+
+        if ($element[0]->isVisible()) {
+            echo 'Visible';
+        } else {
+            echo 'Not found';
+        }
+        $page = $this->getSession()->getPage();
+        $elements = $page->findAll('css', '.action-close');
+        foreach ($elements as $item) {
+            if ($item->isVisible()) {
+                $item->click();
+            }
+        }
+
+        $this->getSession()->resizeWindow(1800, 1000);
+        $this->getSession()->wait(1000);
     }
 
     /**
@@ -449,7 +601,26 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
     public
     function theObjectMainMenuStorelocatorShouldBeVisible()
     {
-        throw new PendingException();
+        $page = $this->getSession()->getPage();
+        $elements = $page->findAll('css', '.action-close');
+        foreach ($elements as $item) {
+            if ($item->isVisible()) {
+                $item->click();
+            }
+        }
+
+        $this->getSession()->resizeWindow(1800, 1000);
+        $this->getSession()->wait(1000);
+
+
+        $page = $this->getSession()->getPage();
+        $element = $page->findAll('named', ['content', 'Store Locator']);
+
+        if ($element[0]->isVisible()) {
+            echo 'Visible';
+        } else {
+            echo 'Not found';
+        }
     }
 
     /**
@@ -467,7 +638,26 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
     public
     function theObjectMainMenuRegisterwatchShouldBeVisible()
     {
-        throw new PendingException();
+        $page = $this->getSession()->getPage();
+        $elements = $page->findAll('css', '.action-close');
+        foreach ($elements as $item) {
+            if ($item->isVisible()) {
+                $item->click();
+            }
+        }
+
+        $this->getSession()->resizeWindow(1800, 1000);
+        $this->getSession()->wait(1000);
+
+
+        $page = $this->getSession()->getPage();
+        $element = $page->findAll('named', ['content', 'Enregistrer Montre']);
+
+        if ($element[0]->isVisible()) {
+            echo 'Visible';
+        } else {
+            echo 'Not found';
+        }
     }
 
     /**
@@ -485,7 +675,26 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
     public
     function theObjectMainMenuMyaccountShouldBeVisible()
     {
-        throw new PendingException();
+        $page = $this->getSession()->getPage();
+        $elements = $page->findAll('css', '.action-close');
+        foreach ($elements as $item) {
+            if ($item->isVisible()) {
+                $item->click();
+            }
+        }
+
+        $this->getSession()->resizeWindow(1800, 1000);
+        $this->getSession()->wait(1000);
+
+
+        $page = $this->getSession()->getPage();
+        $element = $page->findAll('named', ['content', 'Mon Compte']);
+
+        if ($element[0]->isVisible()) {
+            echo 'Visible';
+        } else {
+            echo 'Not found';
+        }
     }
 
     /**
@@ -503,7 +712,26 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
     public
     function theObjectMainMenuMycartShouldBeVisible()
     {
-        throw new PendingException();
+        $page = $this->getSession()->getPage();
+        $elements = $page->findAll('css', '.action-close');
+        foreach ($elements as $item) {
+            if ($item->isVisible()) {
+                $item->click();
+            }
+        }
+
+        $this->getSession()->resizeWindow(1800, 1000);
+        $this->getSession()->wait(1000);
+
+
+        $page = $this->getSession()->getPage();
+        $element = $page->findAll('named', ['content', 'Mon Panier']);
+
+        if ($element[0]->isVisible()) {
+            echo 'Visible';
+        } else {
+            echo 'Not found';
+        }
     }
 
     /**
@@ -521,7 +749,26 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
     public
     function theObjectMainTissotlogoShouldBeVisible()
     {
-        throw new PendingException();
+        $page = $this->getSession()->getPage();
+        $elements = $page->findAll('css', '.action-close');
+        foreach ($elements as $item) {
+            if ($item->isVisible()) {
+                $item->click();
+            }
+        }
+
+        $this->getSession()->resizeWindow(1800, 1000);
+        $this->getSession()->wait(1000);
+
+
+        $page = $this->getSession()->getPage();
+        $element = $page->findAll('named', ['content', 'Tissot Logo']);
+
+        if ($element[0]->isVisible()) {
+            echo 'Visible';
+        } else {
+            echo 'Not found';
+        }
     }
 
     /**
