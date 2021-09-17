@@ -6,6 +6,12 @@ use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
 use Behat\Mink\Session;
 use Behat\Mink\Mink;
+use Behat\Mink\Driver\Selenium2Driver;
+use DMore\ChromeDriver\ChromeDriver;
+
+$mink = new Mink(array(
+    'browser' => new Session(new ChromeDriver('http://localhost:9222', null, 'https://www.tissotwatches.com'))
+));
 
 /**
  * Defines application features from the specific context.
@@ -19,12 +25,13 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
      */
     public function setupCountryConfigurationForFr()
     {
-        $driver = new \Behat\Mink\Driver\GoutteDriver();
+        $driver = new \Behat\Mink\Driver\Selenium2Driver();
         $session = new \Behat\Mink\Session($driver);
         $session->start();
         $session = $this->getSession();
         $session->visit($this->locatePath('/'));
         $page = $this->getSession()->getPage();
+
         $elements = $page->findAll('css', '.action-close');
         foreach ($elements as $item) {
             if ($item->isVisible()) {
@@ -34,38 +41,32 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         $this->getSession()->resizeWindow(1800, 1000);
         $this->getSession()->wait(1000);
 
-        $this->getSession()->getPage()->find('xpath',"//li/a[@href='#']")->click();
+        $this->getSession()->getPage()->find('xpath', "//li/a[@href='#']")->click();
 
-        $this->getSession()->getPage()->find('xpath',"//*//div[2]/div[1]/di")->click();
-//        foreach ($element as $item) {
-//            if ($item->isVisible()) {
-//                $item->click();
-//            }
-//        }
-
-//        $this->getSession()->getPage()->click("//li/a[@href='#']");
-
-//        $session = $this->getSession()->getPage()->find('css','.store-switcher')->click();
+        $this->getSession()->getPage()->find('xpath',"//*[@id='tissot_storeselector']/div[2]/div[1]/div/ul/li[5]")->click();
         echo $this->getSession()->getCurrentUrl();
+
     }
 
     /**
      * @When the user navigates to {https:\/\/www.tissotwatches.com\/fr-fr\/}
      */
-    public function theUserNavigatesToHttpsWwwTissotwatchesComFrFr()
+    public
+    function theUserNavigatesToHttpsWwwTissotwatchesComFrFr()
     {
-        $driver = new \Behat\Mink\Driver\GoutteDriver();
-        $session = new \Behat\Mink\Session($driver);
-        $session->start();
-        $session->visit('https://www.tissotwatches.com/fr-fr/') . "\n";
-        echo $session->getCurrentUrl() . "\n";
-        echo $session->getStatuscode();
+//        $driver = new \Behat\Mink\Driver\Selenium2Driver();
+//        $session = new \Behat\Mink\Session($driver);
+//        $session->start();
+        $this->getSession()->visit('https://www.tissotwatches.com/fr-fr/') . "\n";
+        echo $this->getSession()->getCurrentUrl() . "\n";
+//        echo $session->getStatuscode();
     }
 
     /**
      * @Then the object Main.Menu_Men should be visible
      */
-    public function theObjectMainMenuMenShouldBeVisible()
+    public
+    function theObjectMainMenuMenShouldBeVisible()
     {
         $page = $this->getSession()->getPage();
         $elements = $page->findAll('css', '.action-close');
@@ -91,7 +92,8 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
     /**
      * @When the user clicks on object Main.Menu_Men
      */
-    public function theUserClicksOnObjectMainMenuMen()
+    public
+    function theUserClicksOnObjectMainMenuMen()
     {
         $page = $this->getSession()->getPage();
         $elements = $page->findAll('css', '.action-close');
@@ -102,7 +104,7 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         }
 
         $this->getSession()->resizeWindow(1800, 1000);
-        $this->getSession()->wait(1000);    // ждем 1сек пока попап закроется
+        $this->getSession()->wait(1000);
 
         $elements = $page->findAll('named', ['content', 'HOMME']);
         foreach ($elements as $item) {
@@ -130,7 +132,7 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         }
 
         $this->getSession()->resizeWindow(1800, 1000);
-        $this->getSession()->wait(1000);    // ждем 1сек пока попап закроется
+        $this->getSession()->wait(1000);
 
         $elements = $page->findAll('named', ['content', 'HOMME']);
         foreach ($elements as $item) {
@@ -199,7 +201,7 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         }
 
         $this->getSession()->resizeWindow(1800, 1000);
-        $this->getSession()->wait(1000);    // ждем 1сек пока попап закроется
+        $this->getSession()->wait(1000);
 
         $elements = $page->findAll('named', ['content', 'FEMME']);
         foreach ($elements as $item) {
@@ -226,7 +228,7 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         }
 
         $this->getSession()->resizeWindow(1800, 1000);
-        $this->getSession()->wait(1000);    // ждем 1сек пока попап закроется
+        $this->getSession()->wait(1000);
 
         $elements = $page->findAll('named', ['content', 'FEMME']);
         foreach ($elements as $item) {
@@ -296,7 +298,7 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
         }
 
         $this->getSession()->resizeWindow(1800, 1000);
-        $this->getSession()->wait(1000);    // ждем 1сек пока попап закроется
+        $this->getSession()->wait(1000);
 
         $elements = $page->findAll('named', ['content', 'COLLECTIONS']);
         foreach ($elements as $item) {
@@ -1019,3 +1021,4 @@ class FeatureContext extends \Behat\MinkExtension\Context\RawMinkContext impleme
             . $session->getCurrentUrl();
     }
 }
+

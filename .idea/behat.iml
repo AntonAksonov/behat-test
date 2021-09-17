@@ -49,19 +49,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/behat/mink-selenium2-driver" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/instaclick/php-webdriver" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/kriswallsmith/buzz" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/behat/sahi-client" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/behat/mink-sahi-driver" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/options-resolver" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-factory" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-client" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/nyholm/psr7" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/promise" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/message-factory" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/httplug" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/finder" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bex/behat-extension-driver-locator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bex/behat-screenshot" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ciaranmcnulty/behat-stepthroughextension" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
